@@ -9,6 +9,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -20,6 +21,7 @@ public class ReadFile {
 
     private FileReader fr;
     private BufferedReader br;
+    private ArrayList fileAsList;
 
     public ReadFile(String fileName) {
 
@@ -45,4 +47,23 @@ public class ReadFile {
         }
         return "";
     }
+    
+    public ArrayList GetFileAsArrayList() throws IOException{
+        fileAsList = new ArrayList();
+        String line = "";
+        line = br.readLine();
+        while (line != null){
+            fileAsList.add(line);
+            line = br.readLine();
+            
+        }
+       
+        
+        
+        
+        
+        
+        return fileAsList;
+    }
+    
 }

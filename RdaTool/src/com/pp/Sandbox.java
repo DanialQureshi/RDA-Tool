@@ -5,7 +5,9 @@
  */
 package com.pp;
 
+import com.pp.jst.CSVToolkit;
 import com.pp.jst.ReadFile;
+import java.io.IOException;
 import java.util.ArrayList;
 /**
  *
@@ -13,31 +15,21 @@ import java.util.ArrayList;
  */
 public class Sandbox {
     
-    private static String fileName = "test.txt";
+    private static String fileName = "customer.csv";
     private static String temp;
     private static ArrayList<String> al = new ArrayList();
+    private static CSVToolkit csv;
     
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException{
         
         
         ReadFile rf = new ReadFile(fileName);
+        al = rf.GetFileAsArrayList();
+       csv = new CSVToolkit(al);
+        
 
         
        
-        temp = rf.GetNextLine();
-        while (temp != null)
-        {
-            al.add(temp);
-            temp = rf.GetNextLine();
-            
-        }
-        
-
-        for (String a : al){
-            System.out.println(a);
-            
-        }
-        
         
         
         
