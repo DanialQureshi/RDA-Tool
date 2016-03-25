@@ -23,13 +23,12 @@ public class Sandbox {
     public static void main(String[] args) throws IOException{
         
         
-        ReadFile rf = new ReadFile(fileName);
+       ReadFile rf = new ReadFile(fileName);
         al = rf.GetFileAsArrayList();
        csv = new CSVToolkit(al);
         
 
-        
-       
+  
         
         
         
