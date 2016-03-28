@@ -35,35 +35,28 @@ public class ReadFile {
         }
 
     }
-    
-    
-    
+
     public String GetNextLine() {
 
         try {
             return br.readLine();
         } catch (IOException ex) {
-               System.out.println(ex);
+            System.out.println(ex);
         }
         return "";
     }
-    
-    public ArrayList GetFileAsArrayList() throws IOException{
+
+    public ArrayList GetFileAsArrayList() throws IOException {
         fileAsList = new ArrayList();
         String line = "";
         line = br.readLine();
-        while (line != null){
+        while (line != null) {
             fileAsList.add(line);
             line = br.readLine();
-            
+
         }
-       
-        
-        
-        
-        
-        
+
         return fileAsList;
     }
-    
+
 }
